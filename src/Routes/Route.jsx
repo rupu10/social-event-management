@@ -7,6 +7,7 @@ import Home from "../Pages/Home/Home";
 import UpComingEvents from "../Pages/UpComingEvents/UpComingEvents";
 import SignUp from "../Pages/Register/SignUp";
 import LogIn from "../Pages/Register/LogIn";
+import EventDetails from "../Pages/EventDetails/EventDetails";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         {
             path: "/upComingEvents",
             Component: UpComingEvents
+        },
+        {
+            path: '/events/:id',
+            Component: EventDetails
         },
         {
             path:"/signUp",
