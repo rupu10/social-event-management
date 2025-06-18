@@ -34,7 +34,7 @@ const Navbar = () => {
               <NavLink to="/createEvents">Create Events</NavLink>
             </li>
             <li>
-              <NavLink to="/manageEvents">Manage Events</NavLink>
+              <NavLink to="/manageMyEvents">Manage Events</NavLink>
             </li>
             <li>
               <NavLink to="/myJoinedEvents">My joined Events</NavLink>
