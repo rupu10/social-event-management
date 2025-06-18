@@ -16,7 +16,7 @@ const JoinedEventList = ({myJoinedEventsPromise}) => {
           </label>
         </th>
         <th>Name</th>
-        <th>Job</th>
+        <th>Event list</th>
         <th>Favorite Color</th>
         <th></th>
       </tr>

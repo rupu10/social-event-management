@@ -52,7 +52,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-violet-950">
+    <div className="bg-violet-950 z-50 relative">
       <div className="navbar w-10/12 mx-auto text-white">
         <div className="navbar-start">
           <div className="dropdown">
@@ -83,7 +83,7 @@ const Navbar = () => {
           <Link to="/" className="text-3xl cursor-pointer font-semibold"><span className="text-red-500">Lal</span><span className="text-green-500">Shabuj</span></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+          <ul tabIndex={0} className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end gap-x-2">
           {
