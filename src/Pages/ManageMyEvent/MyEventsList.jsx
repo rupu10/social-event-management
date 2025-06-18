@@ -11,9 +11,9 @@ const MyEventsList = ({myEventsPromise}) => {
     <thead>
       <tr>
         <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>Event Name</th>
+        <th>date</th>
+        <th>view event</th>
       </tr>
     </thead>
     <tbody>
@@ -23,7 +23,7 @@ const MyEventsList = ({myEventsPromise}) => {
         <th>{index+1}</th>
         <td>{event.title}</td>
         <td>{event.eventDate}</td>
-        <td><Link to={`/events/${event._id}`}>View Events</Link></td>
+        <td><Link to={`/updateMyEvent/${event._id}`}>View Events</Link></td>
       </tr>)
       }
     </tbody>

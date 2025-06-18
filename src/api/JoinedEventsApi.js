@@ -1,3 +1,7 @@
-export const myJoinedEventsPromise = email => {
-    return fetch(`http://localhost:7000/joinEvents?email=${email}`).then(res=>res.json())
+export const myJoinedEventsPromise = (email,accessToken) => {
+    return fetch(`http://localhost:7000/joinEvents?email=${email}`,{
+        headers: {
+            authorization: `Bearer ${accessToken}`
+        }
+    }).then(res=>res.json())
 }

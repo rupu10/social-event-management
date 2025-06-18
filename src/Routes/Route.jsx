@@ -12,7 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyJoinedEvents from "../Pages/MyJoinedEvent/MyJoinedEvents";
 import CreateEvent from "../Pages/CeateEvent/CreateEvent";
 import ManageMyEvents from "../Pages/ManageMyEvent/ManageMyEvents";
-import ViewEvents from "../Pages/ManageMyEvent/ViewEvents/ViewEvents";
+import UpdateMyEvent from "../Pages/ManageMyEvent/UpdateMyEvent/UpdateMyEvent";
 
 const router = createBrowserRouter([
   {
@@ -45,8 +45,9 @@ const router = createBrowserRouter([
             element: <PrivateRoute><ManageMyEvents></ManageMyEvents></PrivateRoute>
         },
         {
-            path: '/events/:event_id',
-            element: <PrivateRoute><ViewEvents></ViewEvents></PrivateRoute>
+            path: '/updateMyEvent/:id',
+            loader: ({params}) => fetch(`http://localhost:7000/events/${params.id}`),
+            element: <PrivateRoute><UpdateMyEvent></UpdateMyEvent></PrivateRoute>
         },
         {
             path:"/signUp",

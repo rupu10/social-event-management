@@ -5,7 +5,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const EventDetails = () => {
-    const {description,eventDate,eventType,location,thumbnail,title, _id} = useLoaderData();
+    const {location,title, _id} = useLoaderData();
     const {user} = UseAuth()
     
     const handleJoinEvent = () => {

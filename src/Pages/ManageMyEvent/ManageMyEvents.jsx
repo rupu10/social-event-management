@@ -8,7 +8,7 @@ const ManageMyEvents = () => {
     return (
         <div>
             <Suspense>
-                <MyEventsList myEventsPromise={myEventsPromise(user.email)}></MyEventsList>
+                <MyEventsList myEventsPromise={myEventsPromise(user.email,user.accessToken)}></MyEventsList>
             </Suspense>
         </div>
     );

@@ -15,10 +15,8 @@ const JoinedEventList = ({myJoinedEventsPromise}) => {
             <input type="checkbox" className="checkbox" />
           </label>
         </th>
-        <th>Name</th>
+        <th>Applicant email</th>
         <th>Event list</th>
-        <th>Favorite Color</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>

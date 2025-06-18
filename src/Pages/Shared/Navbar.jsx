@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
+import ThemeTOggle from "./ThemeTOggle";
 
 const Navbar = () => {
 
@@ -26,6 +27,7 @@ const Navbar = () => {
       <li>
         <NavLink to="/upComingEvents">Upcoming Events</NavLink>
       </li>
+      <ThemeTOggle></ThemeTOggle>
       <li>
         <details>
           <summary>Events Curriculum</summary>
@@ -46,7 +48,8 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to="/upComingEvents">Upcoming Events</NavLink>
-      </li></>
+      </li>
+      </>
       }
     </>
   );
@@ -87,7 +90,8 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-x-2">
           {
-            user? <div className="flex gap-x-2"><button onClick={handleSignOut} className="btn">sign out</button> <img className="w-[40px] h-[40px] rounded-full" src={user.photoURL} title={user.displayName} alt="" /></div>: <><NavLink className="btn" to="/signUp">Sign Up</NavLink>
+            user? <div className="flex gap-x-2"><button onClick={handleSignOut} className="btn">sign out</button>
+             <img className="w-[40px] h-[40px] rounded-full" src={user.photoURL} title={user.displayName} alt="" /></div>: <><NavLink className="btn" to="/signUp">Sign Up</NavLink>
           <NavLink className="btn" to="/logIn">Log in</NavLink></>
           }
         </div>

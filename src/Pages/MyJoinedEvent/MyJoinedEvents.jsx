@@ -1,14 +1,16 @@
 import React, { Suspense } from 'react';
 import JoinedEventList from './JoinedEventList';
 import UseAuth from '../../hooks/UseAuth';
-import { myJoinedEventsPromise } from '../../api/JoinedEventsApi';
+import UseJoinedEventApi from '../../api/UseJoinedEventApi';
+
 
 
 
 
 const MyJoinedEvents = () => {
     const {user} = UseAuth();
-    // console.log(user);
+    const {myJoinedEventsPromise} = UseJoinedEventApi();
+    // console.log(myJoinedEventsPromise);
     return (
         <div>
             <h1>joined events</h1>
