@@ -27,10 +27,10 @@ const Navbar = () => {
 
       {user && (
         <>
-          <li>
+          <li className="">
             <details>
             <summary>Events Curriculum</summary>
-            <ul className="p-2 md:text-black">
+            <ul className="p-2 bg-white md:text-black">
               <li>
                 {" "}
                 <NavLink to="/createEvents">Create Events</NavLink>

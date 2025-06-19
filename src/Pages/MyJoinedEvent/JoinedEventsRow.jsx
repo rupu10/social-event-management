@@ -12,16 +12,15 @@ const JoinedEventsRow = ({joinedEvent,index}) => {
       <td>
         <div className="flex items-center gap-3">
           <div>
-            <p>{joinedEvent.applicant}</p>
+            <p>{joinedEvent.title}</p>
           </div>
         </div>
       </td>
       <td>
-        Zemlak, Daniel and Leannon
-        <br />
-        <span className="badge badge-ghost badge-sm">
-          Desktop Support Technician
-        </span>
+        {joinedEvent.eventDate}
+      </td>
+      <td>
+        {joinedEvent.location}
       </td>
     </tr>
   );

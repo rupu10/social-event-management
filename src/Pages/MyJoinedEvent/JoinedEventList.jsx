@@ -3,6 +3,7 @@ import JoinedEventsRow from './JoinedEventsRow';
 
 const JoinedEventList = ({myJoinedEventsPromise}) => {
     const joinedEvents = use(myJoinedEventsPromise);
+    console.log(joinedEvents);
     return (
         <div>
             <div className="overflow-x-auto">
@@ -15,8 +16,9 @@ const JoinedEventList = ({myJoinedEventsPromise}) => {
             <input type="checkbox" className="checkbox" />
           </label>
         </th>
-        <th>Applicant email</th>
-        <th>Event list</th>
+        <th>Event Title</th>
+        <th>Event Date</th>
+        <th>Event Location</th>
       </tr>
     </thead>
     <tbody>
