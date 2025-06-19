@@ -1,13 +1,14 @@
 import React from 'react';
+import { IoIosPin } from "react-icons/io";
 import { Link } from 'react-router';
 
 const EventCard = ({event}) => {
 
-    const {title, thumbnail,description,_id} = event;
-    // console.log(thumbnail);
+    const {title, thumbnail,location,_id,eventDate} = event;
+    console.log(event);
 
     return (
-        <div className="card bg-base-100 shadow-sm">
+        <div className="card bg-base-100 shadow-md hover:shadow-xl">
   <figure>
     <img
       src= {thumbnail}
@@ -16,7 +17,8 @@ const EventCard = ({event}) => {
   </figure>
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
-    <p>{description}</p>
+    <p className='flex gap-1 items-center'><IoIosPin size={20}></IoIosPin>{location}</p>
+    <p className=''><span className='font-semibold'>Event Date</span>: {eventDate}</p>
     <div className="card-actions justify-end">
       <Link to={`/events/${_id}`}><button className="btn btn-primary">view Details</button></Link>
     </div>

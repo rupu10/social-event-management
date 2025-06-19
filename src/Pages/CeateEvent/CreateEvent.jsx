@@ -40,76 +40,75 @@ const CreateEvent = () => {
   return (
     <div>
       <h1>add your event</h1>
-      <form onSubmit={handleAddEvent}>
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-          <legend className="fieldset-legend">Event details</legend>
+      <form onSubmit={handleAddEvent} className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
+        <legend className="fieldset-legend">Event details</legend>
+        <div className="grid grid-cols-2 gap-3">
 
-          <div>
+          <fieldset className="fieldset w-full">
             <label className="label">Title</label>
           <input
             type="text"
             name="title"
-            className="input"
+            className="input w-full"
             placeholder="Event title"
           />
-          </div>
+          </fieldset>
 
-          <div>
+          <fieldset className="fieldset w-full">
             <label className="label">Description</label>
           <input
             type="text"
             name="description"
-            className="input"
+            className="input w-full"
             placeholder="Event description"
           />
-          </div>
+          </fieldset>
 
-          <div>
+          <fieldset className="fieldset w-full">
             <label className="label">location</label>
           <input
             type="text"
             name="location"
-            className="input"
+            className="input w-full"
             placeholder="Location"
           />
-          </div>
+          </fieldset>
 
-          <div>
+          <fieldset className="fieldset w-full">
             <label className="label">thumbnail Image URL</label>
-          <input type="url" name="thumbnail" className="input" placeholder="Image" />
-          </div>
+          <input type="url" name="thumbnail" className="input w-full" placeholder="Image" />
+          </fieldset>
 
-          <div>
-            <label className="fieldset-legend">Event details</label>
-          <select defaultValue="Event Type" name="eventType" className="select">
+          <fieldset className="fieldset w-full">
+            <label className="label">Event Type</label>
+          <select defaultValue="Event Type" name="eventType" className="select w-full">
             <option disabled={true}>Event Type</option>
             <option>Cleanup</option>
             <option>Plantation</option>
             <option>Donation</option>
             <option>others</option>
           </select>
-          </div>
-          <legend className="fieldset-legend">Creator info</legend>
-
-          <label className="label">Creator's name</label>
+          </fieldset>
+          <fieldset className="fieldset w-full">
+            <label className="label">Creator's name</label>
           <input
             type="text"
             name="creator_name"
-            className="input"
+            className="input w-full"
             placeholder="Creator's Name"
           />
-
-          <label className="label">Creator's email</label>
+          </fieldset>
+          <fieldset className="fieldset w-full">
+            <label className="label">Creator's email</label>
           <input
             type="email"
             name="creator_email"
             defaultValue={user.email}
-            className="input"
+            className="input w-full"
             placeholder="Creator's email"
           />
-        </fieldset>
-
-        <fieldset className="bg-base-200 border-base-300 rounded-box w-xs border p-2">
+          </fieldset>
+          <fieldset className="bg-base-200 fieldset w-full border-base-300 rounded-boxborder p-2">
           <legend className="fieldset-legend">Pick your event date (yyyy/mm/dd)</legend>
           <DatePicker
             className="w-full"
@@ -120,6 +119,8 @@ const CreateEvent = () => {
           ></DatePicker>
           <input type="hidden" name="eventDate" value={formattedDate} />
         </fieldset>
+        
+        </div>
         <input type="submit" className="btn btn-primary" value="Add Event" />
       </form>
     </div>

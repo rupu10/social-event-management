@@ -4,58 +4,54 @@ import { AuthContext } from "../../Context/AuthContext";
 import ThemeTOggle from "./ThemeTOggle";
 
 const Navbar = () => {
+  const { user, signOuUser } = use(AuthContext);
 
-    const {user,signOuUser} = use(AuthContext);
-
-    const handleSignOut = () =>{
-        signOuUser()
-        .then(res=>{
-            console.log(res.user);
-        })
-        .catch(err=>{
-            console.log(err);
-        })
-        
-    }
+  const handleSignOut = () => {
+    signOuUser()
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const links = (
     <>
-      {
-        user? <><li>
+      <li>
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
         <NavLink to="/upComingEvents">Upcoming Events</NavLink>
       </li>
-      <ThemeTOggle></ThemeTOggle>
-      <li>
-        <details>
-          <summary>Events Curriculum</summary>
-          <ul className="p-2 md:text-black">
-            <li>
-              <NavLink to="/createEvents">Create Events</NavLink>
-            </li>
-            <li>
-              <NavLink to="/manageMyEvents">Manage Events</NavLink>
-            </li>
-            <li>
-              <NavLink to="/myJoinedEvents">My joined Events</NavLink>
-            </li>
-          </ul>
-        </details>
-      </li></>: <><li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/upComingEvents">Upcoming Events</NavLink>
-      </li>
-      </>
-      }
+
+      {user && (
+        <>
+          <li>
+            <details>
+            <summary>Events Curriculum</summary>
+            <ul className="p-2 md:text-black">
+              <li>
+                {" "}
+                <NavLink to="/createEvents">Create Events</NavLink>
+              </li>
+              <li>
+                <NavLink to="/manageMyEvents">Manage Events</NavLink>
+              </li>
+              <li>
+                <NavLink to="/myJoinedEvents">My joined Events</NavLink>
+              </li>
+            </ul>
+          </details>
+          </li>
+        </>
+      )}
     </>
   );
 
+
   return (
-    <div className="bg-violet-950 z-50 relative">
+    <div className="bg-gradient-to-l from-violet-500 via-violet-700 to-violet-900 z-50 sticky top-0">
       <div className="navbar w-10/12 mx-auto text-white">
         <div className="navbar-start">
           <div className="dropdown">
@@ -83,17 +79,40 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="text-3xl cursor-pointer font-semibold"><span className="text-red-500">Lal</span><span className="text-green-500">Shabuj</span></Link>
+          <Link to="/" className="text-3xl cursor-pointer font-semibold">
+            <span className="text-red-500">Lal</span>
+            <span className="text-green-500">Shabuj</span>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul tabIndex={0} className="menu menu-horizontal px-1">{links}</ul>
+          <ul tabIndex={0} className="menu menu-horizontal px-1">
+            {links}
+          </ul>
         </div>
         <div className="navbar-end gap-x-2">
-          {
-            user? <div className="flex gap-x-2"><button onClick={handleSignOut} className="btn">sign out</button>
-             <img className="w-[40px] h-[40px] rounded-full" src={user.photoURL} title={user.displayName} alt="" /></div>: <><NavLink className="btn" to="/signUp">Sign Up</NavLink>
-          <NavLink className="btn" to="/logIn">Log in</NavLink></>
-          }
+          <ThemeTOggle></ThemeTOggle>
+          {user && (
+            <>
+              <button onClick={handleSignOut} className="btn ">
+                sign out
+              </button>
+              <div>
+                <img className="rounded-full w-[60px] h-[60px]" src={user.photoURL} referrerPolicy="no-referrer" alt="" />
+              </div>
+            </>
+          )}
+          {!user && (
+            <>
+              <>
+                <NavLink className="btn" to="/signUp">
+                  Sign Up
+                </NavLink>
+                <NavLink className="btn" to="/logIn">
+                  Log in
+                </NavLink>
+              </>
+            </>
+          )}
         </div>
       </div>
     </div>
@@ -101,3 +120,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

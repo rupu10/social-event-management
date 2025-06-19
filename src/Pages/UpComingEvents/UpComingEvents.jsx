@@ -11,7 +11,7 @@ const UpComingEvents = () => {
         })
     },[])
     return (
-        <div>
+        <div className='w-10/12 mx-auto'>
             <Suspense fallback={'loading'}>
                 <AllEvents eventsPromise={eventsPromise}></AllEvents>
             </Suspense>

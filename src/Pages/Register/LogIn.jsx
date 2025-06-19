@@ -1,10 +1,12 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const LogIn = () => {
 
     const {logInUser,googleLogIn} = use(AuthContext)
+    const navigate = useNavigate()
 
 
     const handleLogIn = e => {
@@ -18,6 +20,13 @@ const LogIn = () => {
         logInUser(email,password)
         .then(res=>{
             console.log(res.user);
+            Swal.fire({
+  icon: "success",
+  title: "Your work has been saved",
+  showConfirmButton: false,
+  timer: 1500
+});
+            navigate('/')
         })
         .catch(err=>{
             console.log(err);
@@ -27,6 +36,13 @@ const LogIn = () => {
     const handleGoogleLogIn = () =>{
         googleLogIn()
         .then(res=>{
+            Swal.fire({
+  icon: "success",
+  title: "Your work has been saved",
+  showConfirmButton: false,
+  timer: 1500
+})
+            navigate('/')
             console.log(res.user);
         })
         .catch(err=>{
