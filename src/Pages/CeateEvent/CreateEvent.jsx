@@ -4,8 +4,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import UseAuth from "../../hooks/UseAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const CreateEvent = () => {
+  const navigate = useNavigate()
   const { user } = UseAuth();
   const [selectedDate, setSelectedDate] = useState(null);
   const formattedDate = selectedDate? selectedDate.toISOString().split("T")[0]: "";
@@ -29,6 +31,7 @@ const CreateEvent = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          navigate('/upComingEvents')
         }
       })
       .catch((error) => {
@@ -134,6 +137,7 @@ const CreateEvent = () => {
               className="w-full p-2"
               required
               selected={selectedDate}
+              // defaultValue={}
               onChange={(date) => setSelectedDate(date)}
               dateFormat="yyyy/MM/dd"
               minDate={new Date()}

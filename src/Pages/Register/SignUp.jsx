@@ -16,7 +16,14 @@ const SignUp = () => {
     const photo = form.photo.value;
     const name = form.name.value;
 
-    console.log(email, password,photo, );
+    const passwordRegExp = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (passwordRegExp.test(password) === false) {
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must be at least 6 characters long and include both uppercase and lowercase letters.",
+      });
+    }
 
     createUser(email, password)
       .then((result) => {

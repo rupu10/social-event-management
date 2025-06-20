@@ -15,7 +15,10 @@ const UpdateMyEvent = () => {
     title,
     thumbnail,
     _id,
+    eventDate
   } = useLoaderData();
+  // const data = useLoaderData()
+  // console.log(data);
   const [selectedDate, setSelectedDate] = useState(null);
 
   const formattedDate = selectedDate? selectedDate.toISOString().split("T")[0]: "";
@@ -30,6 +33,7 @@ const UpdateMyEvent = () => {
     data.eventDateNumber = timestamp;
     const updatedEvent = data;
 
+  
     axios
       .put(`http://localhost:7000/events/${_id}`, updatedEvent)
       .then((res) => {
@@ -159,6 +163,8 @@ const UpdateMyEvent = () => {
           <DatePicker
             className="w-full p-2"
             selected={selectedDate}
+            required
+            defaultValue={eventDate}
             onChange={(date) => setSelectedDate(date)}
             dateFormat="yyyy/MM/dd"
             minDate={new Date()}

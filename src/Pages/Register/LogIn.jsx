@@ -14,7 +14,15 @@ const LogIn = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password);
+
+        const passwordRegExp = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (passwordRegExp.test(password) === false) {
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must be at least 6 characters long and include both uppercase and lowercase letters.",
+      });
+    }
 
 
         logInUser(email,password)
@@ -22,7 +30,7 @@ const LogIn = () => {
             console.log(res.user);
             Swal.fire({
   icon: "success",
-  title: "Your work has been saved",
+  title: "logged in successfully",
   showConfirmButton: false,
   timer: 1500
 });
