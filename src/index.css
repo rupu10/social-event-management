@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+a.active{
+  @apply  bg-white text-black underline font-semibold rounded-3xl
+}

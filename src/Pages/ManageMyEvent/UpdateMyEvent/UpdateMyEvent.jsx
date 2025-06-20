@@ -18,15 +18,16 @@ const UpdateMyEvent = () => {
   } = useLoaderData();
   const [selectedDate, setSelectedDate] = useState(null);
 
-  const formattedDate = selectedDate
-    ? selectedDate.toISOString().split("T")[0].replace(/-/g, "/")
-    : "";
+  const formattedDate = selectedDate? selectedDate.toISOString().split("T")[0]: "";
+  const timestamp = selectedDate? selectedDate.getTime() : null;
 
   const handleUpdateEvent = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
+    data.eventDate = formattedDate;
+    data.eventDateNumber = timestamp;
     const updatedEvent = data;
 
     axios

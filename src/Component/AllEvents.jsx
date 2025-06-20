@@ -3,6 +3,7 @@ import EventCard from './EventCard';
 
 const AllEvents = ({eventsPromise}) => {
     const events = eventsPromise
+    console.log(events);
     return (
         <div className='grid grid-cols-3 gap-4'>
             {

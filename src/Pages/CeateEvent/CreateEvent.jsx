@@ -8,18 +8,16 @@ import Swal from "sweetalert2";
 const CreateEvent = () => {
   const { user } = UseAuth();
   const [selectedDate, setSelectedDate] = useState(null);
-
-  const formattedDate = selectedDate
-    ? selectedDate.toISOString().split("T")[0].replace(/-/g, "/")
-    : "";
-
+  const formattedDate = selectedDate? selectedDate.toISOString().split("T")[0]: "";
+  const timestamp = selectedDate? selectedDate.getTime() : null;
+  
   const handleAddEvent = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
-    console.log(data);
-    // console.log(Object.keys(data).length);
+    data.eventDate = formattedDate;
+    data.eventDateNumber = timestamp;
     axios
       .post("http://localhost:7000/events", data)
       .then((res) => {
@@ -112,6 +110,7 @@ const CreateEvent = () => {
               type="text"
               name="creator_name"
               required
+              defaultValue={user.displayName}
               className="input w-full"
               placeholder="Creator's Name"
             />
@@ -141,6 +140,7 @@ const CreateEvent = () => {
             ></DatePicker>
             <input type="hidden" name="eventDate" value={formattedDate} />
           </fieldset>
+          {/*  */}
         </div>
         <input type="submit" className="btn btn-primary" value="Add Event" />
       </form>
