@@ -1,8 +1,9 @@
-import React, { use } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 
 const MyEventsList = ({myEventsPromise}) => {
-    const myEvents = use(myEventsPromise)
+    const myEvents = myEventsPromise;
+    console.log(myEvents);
     return (
         <div>
             <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">

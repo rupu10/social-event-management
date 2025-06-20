@@ -1,21 +1,30 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import JoinedEventList from './JoinedEventList';
 import UseAuth from '../../hooks/UseAuth';
-import UseJoinedEventApi from '../../api/UseJoinedEventApi';
-
-
-
 
 
 const MyJoinedEvents = () => {
+    const [myJoinedEventsPromise, setMyJoinedEventPromise] = useState([])
     const {user} = UseAuth();
-    const {myJoinedEventsPromise} = UseJoinedEventApi();
-    console.log(myJoinedEventsPromise);
+    useEffect(()=>{
+        fetch(`http://localhost:7000/joinEvents?email=${user.email}`,{
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                authorization: `Bearer ${user.accessToken}`
+            }
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            setMyJoinedEventPromise(data)
+        })
+    },[user])
+
     return (
         <div className='w-10/12 mx-auto my-8'>
             <h1 className='text-center font-semibold text-3xl mb-3'>Your joined events</h1>
             <Suspense fallback={'loading...'}>
-                <JoinedEventList myJoinedEventsPromise={myJoinedEventsPromise(user.email)}></JoinedEventList>
+                <JoinedEventList myJoinedEventsPromise={myJoinedEventsPromise}></JoinedEventList>
             </Suspense>
         </div>
     );

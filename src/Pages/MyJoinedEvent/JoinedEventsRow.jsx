@@ -1,7 +1,6 @@
 import React from "react";
 
 const JoinedEventsRow = ({joinedEvent,index}) => {
-    console.log(joinedEvent);
   return (
     <tr>
       <th>

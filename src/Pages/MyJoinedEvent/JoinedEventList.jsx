@@ -1,9 +1,8 @@
-import React, { use } from 'react';
+import React from 'react';
 import JoinedEventsRow from './JoinedEventsRow';
 
 const JoinedEventList = ({myJoinedEventsPromise}) => {
-    const joinedEvents = use(myJoinedEventsPromise);
-    console.log(joinedEvents);
+    const joinedEvents = myJoinedEventsPromise
     return (
         <div>
             <div className="overflow-x-auto">
