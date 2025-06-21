@@ -104,7 +104,7 @@ const Navbar = () => {
           {!user && (
             <>
               <>
-                <NavLink className="border rounded-lg px-3 py-2 hover:bg-white hover:text-black cursor-pointer" to="/signUp">
+                <NavLink className="border rounded-lg px-2 py-1 md:px-3 md:py-2 hover:bg-white hover:text-black cursor-pointer" to="/signUp">
                   Sign Up
                 </NavLink>
                 <NavLink className="border rounded-lg px-3 py-2 hover:bg-white hover:text-black cursor-pointer"  to="/logIn">
