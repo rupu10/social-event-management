@@ -13,11 +13,13 @@ import MyJoinedEvents from "../Pages/MyJoinedEvent/MyJoinedEvents";
 import CreateEvent from "../Pages/CeateEvent/CreateEvent";
 import ManageMyEvents from "../Pages/ManageMyEvent/ManageMyEvents";
 import UpdateMyEvent from "../Pages/ManageMyEvent/UpdateMyEvent/UpdateMyEvent";
+import Error from "../Component/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayOut,
+    errorElement: <Error></Error>,
     children: [
         {
             index: true,

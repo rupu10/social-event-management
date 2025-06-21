@@ -8,11 +8,11 @@ const EventCard = ({event}) => {
     // console.log(event);
 
     return (
-        <div className="card bg-base-100 shadow-md hover:shadow-xl">
+        <div className="card bg-base-100 border border-white shadow-md hover:shadow-xl">
   <figure>
     <img
       src= {thumbnail}
-      className='max-h-[300px] w-full min-h-[270px]'
+      className='max-h-[250px] md:max-h-[300px] w-full md:min-h-[270px]'
       alt="Shoes" />
   </figure>
   <div className="card-body">

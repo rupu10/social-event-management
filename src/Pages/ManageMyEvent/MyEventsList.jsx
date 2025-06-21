@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 
 const MyEventsList = ({myEventsPromise}) => {
     const myEvents = myEventsPromise;
-    console.log(myEvents);
     return (
         <div>
             <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">

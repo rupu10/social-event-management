@@ -21,7 +21,7 @@ const MyJoinedEvents = () => {
     },[user])
 
     return (
-        <div className='w-10/12 mx-auto my-8'>
+        <div className='md:w-10/12 mx-auto my-8'>
             <h1 className='text-center font-semibold text-3xl mb-3'>Your joined events</h1>
             <Suspense fallback={'loading...'}>
                 <JoinedEventList myJoinedEventsPromise={myJoinedEventsPromise}></JoinedEventList>

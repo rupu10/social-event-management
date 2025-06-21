@@ -52,7 +52,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-gradient-to-l from-violet-500 via-violet-700 to-violet-900 z-50 sticky top-0">
-      <div className="navbar w-10/12 mx-auto text-white">
+      <div className="navbar md:w-10/12 mx-auto text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -79,7 +79,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="text-3xl cursor-pointer font-semibold">
+          <Link to="/" className="text-2xl md:text-3xl cursor-pointer font-semibold">
             <span className="text-red-500">Lal</span>
             <span className="text-green-500">Shabuj</span>
           </Link>
@@ -93,21 +93,21 @@ const Navbar = () => {
           <ThemeTOggle></ThemeTOggle>
           {user && (
             <>
-              <button onClick={handleSignOut} className="btn ">
-                sign out
+              <button onClick={handleSignOut} className="border rounded-lg px-2 py-1 md:px-3 md:py-2 hover:bg-white hover:text-black cursor-pointer">
+                <p className="font-semibold">sign out</p>
               </button>
               <div>
-                <img className="rounded-full w-[60px] h-[60px]" src={user.photoURL} referrerPolicy="no-referrer" alt="" />
+                <img className="rounded-full w-10 h-10 md:w-[60px] md:h-[60px]" src={user.photoURL} referrerPolicy="no-referrer" alt="" />
               </div>
             </>
           )}
           {!user && (
             <>
               <>
-                <NavLink className="btn" to="/signUp">
+                <NavLink className="border rounded-lg px-3 py-2 hover:bg-white hover:text-black cursor-pointer" to="/signUp">
                   Sign Up
                 </NavLink>
-                <NavLink className="btn" to="/logIn">
+                <NavLink className="border rounded-lg px-3 py-2 hover:bg-white hover:text-black cursor-pointer"  to="/logIn">
                   Log in
                 </NavLink>
               </>

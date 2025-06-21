@@ -21,7 +21,7 @@ const ManageMyEvents = () => {
         
     },[user])
     return (
-        <div className='w-10/12 mx-auto my-8'>
+        <div className='md:w-10/12 mx-auto my-8'>
             <h1 className='text-3xl font-semibold text-center mb-3'>Events You created</h1>
             <Suspense>
                 <MyEventsList myEventsPromise={myEventsPromise}></MyEventsList>

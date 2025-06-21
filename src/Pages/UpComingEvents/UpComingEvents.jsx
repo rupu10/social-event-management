@@ -11,6 +11,7 @@ const UpComingEvents = () => {
         setEventsPromise(data);
       });
   }, [searchText]);
+  
   return (
     <div className="w-10/12 mx-auto my-8">
       <div className="flex justify-center items-center my-2 p-3">
