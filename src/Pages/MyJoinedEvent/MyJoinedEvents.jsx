@@ -7,7 +7,7 @@ const MyJoinedEvents = () => {
     const [myJoinedEventsPromise, setMyJoinedEventPromise] = useState([])
     const {user} = UseAuth();
     useEffect(()=>{
-        fetch(`http://localhost:7000/joinEvents?email=${user.email}`,{
+        fetch(`https://a-11-social-event-server.vercel.app/joinEvents?email=${user.email}`,{
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",

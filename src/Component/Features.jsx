@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const Features = () => {
     const [eventsPromise, setEventsPromise] = useState([]);
         useEffect(()=>{
-            fetch("http://localhost:7000/ourEvents")
+            fetch("https://a-11-social-event-server.vercel.app/ourEvents")
             .then(res=>res.json())
             .then(data=>{
                 setEventsPromise(data)

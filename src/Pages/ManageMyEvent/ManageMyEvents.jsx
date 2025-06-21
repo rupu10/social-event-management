@@ -7,7 +7,7 @@ const ManageMyEvents = () => {
     const {user} = UseAuth();
     const [myEventsPromise,setMyEventsPromise] = useState([])
     useEffect(()=>{
-        fetch(`http://localhost:7000/manage-event?email=${user.email}`,{
+        fetch(`https://a-11-social-event-server.vercel.app/manage-event?email=${user.email}`,{
             method: 'GET',
             headers: {
         "Content-Type": "application/json",

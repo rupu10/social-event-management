@@ -5,13 +5,14 @@ const UpComingEvents = () => {
   const [searchText, setSearchText] = useState("");
   const [eventsPromise, setEventsPromise] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:7000/events?title=${searchText}`)
+    fetch(`https://a-11-social-event-server.vercel.app/events?title=${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         setEventsPromise(data);
       });
   }, [searchText]);
-  
+  console.log(eventsPromise);
+
   return (
     <div className="w-10/12 mx-auto my-8">
       <div className="flex justify-center items-center my-2 p-3">
