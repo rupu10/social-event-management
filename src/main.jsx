@@ -4,6 +4,9 @@ import './index.css'
 import { RouterProvider } from 'react-router'
 import router from './Routes/Route.jsx'
 import AuthProvider from './Context/AuthProvider.jsx'
+import Aos from 'aos'
+
+Aos.init()
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
