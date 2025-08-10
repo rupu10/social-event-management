@@ -12,7 +12,7 @@ const JoinedEventList = ({myJoinedEventsPromise}) => {
       <tr>
         <th>
           <label>
-            <input type="checkbox" className="checkbox" />
+            <button className='p-4 border border-b-gray-100 rounded-xl'></button>
           </label>
         </th>
         <th>Event Title</th>
