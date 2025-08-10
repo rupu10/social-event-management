@@ -48,7 +48,7 @@ description, eventType,eventDate
   return (
     <div className="w-10/12 mx-auto my-10">
       <h1 className="text-4xl text-center font-semibold ">Event Details</h1>
-      <div className="p-4 shadow-xl rounded-xl ">
+      <div className="p-4 ">
         <img className="w-10/12  rounded-xl mb-5" src={thumbnail} alt="" />
         <h1 className="text-4xl mb-3">{title}</h1>
         <p className="text-2xl font-light mb-3">{description}</p>

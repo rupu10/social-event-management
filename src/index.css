@@ -4,3 +4,7 @@
 a.active{
   @apply  bg-white text-black underline font-semibold rounded-3xl
 }
+
+.btn-primary{
+  background-color: #7c3aed;
+}

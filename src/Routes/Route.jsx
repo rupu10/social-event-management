@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/events/:id',
-            element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
+            element: <EventDetails></EventDetails>,
             loader: ({params})=> fetch(`https://a-11-social-event-server.vercel.app/events/${params.id}`)
         },
         {

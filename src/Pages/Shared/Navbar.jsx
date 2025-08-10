@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
 import ThemeTOggle from "./ThemeTOggle";
@@ -16,6 +16,16 @@ const Navbar = () => {
       });
   };
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // Change after 50px scroll
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const links = (
     <>
       <li>
@@ -29,30 +39,33 @@ const Navbar = () => {
         <>
           <li className="">
             <details>
-            <summary>Events Curriculum</summary>
-            <ul className="p-2 bg-white md:text-black">
-              <li>
-                {" "}
-                <NavLink to="/createEvents">Create Events</NavLink>
-              </li>
-              <li>
-                <NavLink to="/manageMyEvents">Manage Events</NavLink>
-              </li>
-              <li>
-                <NavLink to="/myJoinedEvents">My joined Events</NavLink>
-              </li>
-            </ul>
-          </details>
+              <summary>Events Curriculum</summary>
+              <ul className="p-2 bg-white md:text-black">
+                <li>
+                  {" "}
+                  <NavLink to="/createEvents">Create Events</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/manageMyEvents">Manage Events</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/myJoinedEvents">My joined Events</NavLink>
+                </li>
+              </ul>
+            </details>
           </li>
         </>
       )}
     </>
   );
 
-
   return (
-    <div className="bg-gradient-to-l from-violet-500 via-violet-700 to-violet-900 z-50 sticky top-0">
-      <div className="navbar md:w-10/12 mx-auto text-white">
+    <div
+      className={`fixed w-full border-b-1 border-gray-100 top-0 left-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-white/40 backdrop-blur-md shadow-md" : "bg-transparent"
+      }`}
+    >
+      <div className="navbar md:w-10/12 mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -79,7 +92,10 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="text-2xl md:text-3xl cursor-pointer font-semibold">
+          <Link
+            to="/"
+            className="text-2xl md:text-3xl cursor-pointer font-semibold"
+          >
             <span className="text-red-500">Lal</span>
             <span className="text-green-500">Shabuj</span>
           </Link>
@@ -93,21 +109,35 @@ const Navbar = () => {
           <ThemeTOggle></ThemeTOggle>
           {user && (
             <>
-              <button onClick={handleSignOut} className="border rounded-lg px-2 py-1 md:px-3 md:py-2 hover:bg-white hover:text-black cursor-pointer">
+              <button
+                onClick={handleSignOut}
+                className="border rounded-lg px-1 md:px-2 py-1 md:py-2 md:font-semibold hover:bg-violet-600 hover:text-white cursor-pointer"
+              >
                 <p className="font-semibold">sign out</p>
               </button>
               <div>
-                <img className="rounded-full w-10 h-10 md:w-[60px] md:h-[60px]" src={user.photoURL} referrerPolicy="no-referrer" alt="" />
+                <img
+                  className="rounded-full w-10 h-10 md:w-[60px] md:h-[60px]"
+                  src={user.photoURL}
+                  referrerPolicy="no-referrer"
+                  alt=""
+                />
               </div>
             </>
           )}
           {!user && (
             <>
               <>
-                <NavLink className="border rounded-lg px-2 py-1 md:px-3 md:py-2 hover:bg-white hover:text-black cursor-pointer" to="/signUp">
+                <NavLink
+                  className="border rounded-lg px-1 md:px-2 py-1 md:py-2 md:font-semibold hover:bg-violet-600 hover:text-white cursor-pointer"
+                  to="/signUp"
+                >
                   Sign Up
                 </NavLink>
-                <NavLink className="border rounded-lg px-3 py-2 hover:bg-white hover:text-black cursor-pointer"  to="/logIn">
+                <NavLink
+                  className="border rounded-lg px-1 md:px-2 py-1 md:py-2 md:font-semibold hover:bg-violet-600 hover:text-white cursor-pointer"
+                  to="/logIn"
+                >
                   Log in
                 </NavLink>
               </>
@@ -120,4 +150,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

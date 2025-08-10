@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
+import Lottie from 'lottie-react';
+import registerLottie from '../../assets/lotties/register.json'
 
 const SignUp = () => {
   const { createUser, googleLogIn } = use(AuthContext);
@@ -43,23 +45,6 @@ const SignUp = () => {
       });
   };
 
-//     createUser(email, password)
-//       .then((res) => {
-//         console.log(res.user);
-//         Swal.fire({
-//           position: "top-end",
-//           icon: "success",
-//           title: "Your work has been saved",
-//           showConfirmButton: false,
-//           timer: 1500,
-//         });
-//         navigate("/");
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   };
-
   const handleGoogleLogIn = () => {
     googleLogIn()
       .then((res) => {
@@ -80,8 +65,11 @@ const SignUp = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen">
+      <div className="md:hero md:min-h-screen mt-20 md:mt-0">
         <div className="hero-content flex-col lg:flex-row-reverse">
+          <div className='hidden md:block'>
+                      <Lottie style={{width: '300px'}} animationData={registerLottie} loop={true}></Lottie>
+                    </div>
           <div className="card bg-base-100 mx-auto max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
               <h1 className="text-5xl font-bold">Sign Up now</h1>
