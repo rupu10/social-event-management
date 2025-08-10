@@ -41,7 +41,7 @@ const UpComingEvents = () => {
           />
         </label>
       </div>
-      <Suspense fallback={"loading"}>
+      <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
         <AllEvents eventsPromise={eventsPromise}></AllEvents>
       </Suspense>
     </div>
