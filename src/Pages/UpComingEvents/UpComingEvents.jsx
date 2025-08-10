@@ -14,7 +14,7 @@ const UpComingEvents = () => {
   console.log(eventsPromise);
 
   return (
-    <div className="my-8">
+    <div className="w-10/12 mx-auto my-8">
       <div className="flex justify-center items-center my-2 p-3">
         <label className="input">
           <svg
