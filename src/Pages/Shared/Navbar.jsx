@@ -3,6 +3,11 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../Context/AuthContext";
 import ThemeTOggle from "./ThemeTOggle";
 
+import { AiOutlineHome, AiOutlinePlusCircle } from 'react-icons/ai';
+import { FaRegCalendarAlt, FaUserCheck } from 'react-icons/fa';
+import { MdMenuBook } from 'react-icons/md';
+import { FiSettings } from 'react-icons/fi';
+
 const Navbar = () => {
   const { user, signOuUser } = use(AuthContext);
 
@@ -29,27 +34,27 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/"><AiOutlineHome size={20} />Home</NavLink>
       </li>
       <li>
-        <NavLink to="/upComingEvents">Upcoming Events</NavLink>
+        <NavLink to="/upComingEvents"><FaRegCalendarAlt size={20} />Upcoming Events</NavLink>
       </li>
 
       {user && (
         <>
           <li className="">
             <details>
-              <summary>Events Curriculum</summary>
+              <summary><MdMenuBook size={20} />Events Curriculum</summary>
               <ul className="p-2 bg-white md:text-black">
                 <li>
                   {" "}
-                  <NavLink to="/createEvents">Create Events</NavLink>
+                  <NavLink to="/createEvents"><AiOutlinePlusCircle size={20} />Create Events</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/manageMyEvents">Manage Events</NavLink>
+                  <NavLink to="/manageMyEvents"><FiSettings size={20} />Manage Events</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/myJoinedEvents">My joined Events</NavLink>
+                  <NavLink to="/myJoinedEvents"><FaUserCheck size={20} />My joined Events</NavLink>
                 </li>
               </ul>
             </details>
