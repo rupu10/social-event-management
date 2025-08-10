@@ -41,7 +41,7 @@ const CreateEvent = () => {
 
   return (
     <div className="w-10/12 mx-auto my-8">
-      <h1>add your event</h1>
+      <h1 className="text-4xl font-bold my-6 text-center">Add your event</h1>
       <form
         onSubmit={handleAddEvent}
         className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4"
