@@ -63,7 +63,7 @@ const LogIn = () => {
     return (
         <div>
       <div className="md:hero md:min-h-screen mt-20 md:mt-0">
-        <div className="hero-content flex-col lg:flex-row-reverse md:gap-x-20">
+        <div className="hero-content flex-col md:flex-row-reverse md:gap-x-20">
           <div className='hidden md:block'>
             <Lottie style={{width: '300px'}} animationData={registerLottie} loop={true}></Lottie>
           </div>
