@@ -5,7 +5,7 @@ const UpComingEvents = () => {
   const [searchText, setSearchText] = useState("");
   const [eventsPromise, setEventsPromise] = useState([]);
   useEffect(() => {
-    fetch(`https://a-11-social-event-server.vercel.app/events?title=${searchText}`)
+    fetch(`https://social-management-server.vercel.app/events?title=${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         setEventsPromise(data);

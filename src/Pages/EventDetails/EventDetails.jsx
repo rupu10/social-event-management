@@ -26,7 +26,7 @@ description, eventType,eventDate
     console.log(joinEvent);
 
     axios
-      .post("https://a-11-social-event-server.vercel.app/joinEvents", joinEvent)
+      .post("https://social-management-server.vercel.app/joinEvents", joinEvent)
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {

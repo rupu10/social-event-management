@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "social-event-management-ca42a",
     "public": "dist",
     "ignore": [
       "firebase.json",

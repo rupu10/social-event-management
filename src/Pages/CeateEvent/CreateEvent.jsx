@@ -21,7 +21,7 @@ const CreateEvent = () => {
     data.eventDate = formattedDate;
     data.eventDateNumber = timestamp;
     axios
-      .post("https://a-11-social-event-server.vercel.app/events", data)
+      .post("https://social-management-server.vercel.app/events", data)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

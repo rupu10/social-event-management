@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "a-11-social-events"
-  }
+    "default": "social-event-management-ca42a"
+  },
+  "targets": {},
+  "etags": {}
 }

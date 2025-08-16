@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import UseAuth from './UseAuth';
 const axiosInstance = axios.create({
-    baseURL: 'https://a-11-social-event-server.vercel.app/'
+    baseURL: 'https://social-management-server.vercel.app/'
 })
 const UseAxiosSecure = () => {
 
