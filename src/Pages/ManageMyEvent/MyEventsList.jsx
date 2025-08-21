@@ -23,7 +23,7 @@ const MyEventsList = ({myEventsPromise}) => {
         <th>{index+1}</th>
         <td>{event.title}</td>
         <td>{event.eventDate}</td>
-        <td><button className='btn btn-primary'><Link to={`/updateMyEvent/${event._id}`}>Edit Events</Link></button></td>
+        <td><button className='btn btn-all'><Link to={`/updateMyEvent/${event._id}`}>Edit Events</Link></button></td>
       </tr>)
       }
     </tbody>

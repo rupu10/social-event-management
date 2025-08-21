@@ -3,20 +3,25 @@ import AllEvents from "../../Component/AllEvents";
 
 const UpComingEvents = () => {
   const [searchText, setSearchText] = useState("");
+  const [sortMode, setSortMode] = useState("upcoming"); // "upcoming" | "past"
   const [eventsPromise, setEventsPromise] = useState([]);
+
   useEffect(() => {
-    fetch(`https://social-management-server.vercel.app/events?title=${searchText}`)
+    fetch(
+      // `https://social-management-server.vercel.app/events?title=${searchText}&sort=${sortMode}`
+      `https://social-management-server.vercel.app/events?title=${searchText}&sort=${sortMode}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setEventsPromise(data);
       });
-  }, [searchText]);
-  console.log(eventsPromise);
+  }, [searchText, sortMode]);
 
   return (
     <div className="w-10/12 mx-auto my-8">
-      <div className="flex justify-center items-center my-2 p-3">
-        <label className="input">
+      {/* 🔍 Search */}
+      <div className="flex justify-center items-center my-2 p-3 gap-3">
+        <label className="input flex items-center gap-2 border px-3 py-2 rounded-lg">
           <svg
             className="h-[1em] opacity-50"
             xmlns="http://www.w3.org/2000/svg"
@@ -38,11 +43,28 @@ const UpComingEvents = () => {
             placeholder="Search events by title..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
+            className="outline-none"
           />
         </label>
+
+        {/* 🔽 Sorting Button */}
+        <button
+          className="btn-dtls text-sm md:text-lg md:py-1 md:px-2 cursor-pointer"
+          onClick={() =>
+            setSortMode((prev) => (prev === "upcoming" ? "past" : "upcoming"))
+          }
+        >
+          {sortMode === "upcoming" ? "Past events" : "Nearest events"}
+        </button>
       </div>
-      <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
-        <AllEvents eventsPromise={eventsPromise}></AllEvents>
+
+      {/* Event List */}
+      <Suspense
+        fallback={
+          <span className="loading loading-spinner loading-xl"></span>
+        }
+      >
+        <AllEvents eventsPromise={eventsPromise} />
       </Suspense>
     </div>
   );

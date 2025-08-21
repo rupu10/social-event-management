@@ -50,15 +50,15 @@ description, eventType,eventDate
       <h1 className="text-4xl text-center font-semibold ">Event Details</h1>
       <div className="p-4 ">
         <img className="w-10/12  rounded-xl mb-5" src={thumbnail} alt="" />
-        <h1 className="text-4xl mb-3">{title}</h1>
-        <p className="text-2xl font-light mb-3">{description}</p>
-      <h1 className="flex items-center gap-1 mb-3"><IoIosPin size={20}/><span className="text-2xl">{location}</span></h1>
-      <h1 className="text-xl mb-3"><span className="font-semibold">Event Type:</span> {eventType}</h1>
-      <h1 className="text-xl mb-3"><span className="font-semibold">Event Date:</span> {eventDate}</h1>
+        <h1 className="text-2xl md:text-4xl mb-3">{title}</h1>
+        <p className="text-xl md:text-2xl font-light mb-3">{description}</p>
+      <h1 className="flex items-center gap-1 mb-3"><IoIosPin size={20}/><span className="text-xl md:text-2xl">{location}</span></h1>
+      <h1 className="text-lg md:text-xl mb-3"><span className="font-semibold">Event Type:</span> {eventType}</h1>
+      <h1 className="text-lg md:text-xl mb-3"><span className="font-semibold">Event Date:</span> {eventDate}</h1>
       <div className="w-10/12 flex justify-end">
-        <button onClick={handleJoinEvent} className="btn btn-primary">
+        {user && <button onClick={handleJoinEvent} className="btn btn-dtls">
         Join Event
-      </button>
+      </button>}
       </div>
       </div>
     </div>

@@ -31,21 +31,21 @@ const Banner = () => {
           <img
             src={bannerImage}
             alt="Image 1"
-            className="w-full md:h-[600px]"
+            className="w-full h-[300px] md:h-[600px]"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={image1}
             alt="Image 2"
-            className="w-full md:h-[600px]"
+            className="w-full h-[300px] md:h-[600px]"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={image2}
             alt="Image 3"
-            className="w-full md:h-[600px]"
+            className="w-full h-[300px] md:h-[600px]"
           />
         </SwiperSlide>
       </Swiper>

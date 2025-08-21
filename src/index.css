@@ -5,6 +5,24 @@ a.active{
   @apply  bg-white text-black underline font-semibold rounded-3xl
 }
 
-.btn-primary{
+.btn-all{
+  border: 1px solid #7c3aed;
+  width: 100%;
+  border-radius: 5px;
+  
+}
+
+.btn-all:hover {
   background-color: #7c3aed;
+  color: white;
+}
+
+.btn-dtls{
+  border: 1px solid #7c3aed;
+  border-radius: 5px;
+}
+
+.btn-dtls:hover{
+  background-color: #7c3aed;
+  color: white;
 }

@@ -210,7 +210,7 @@ const UpdateMyEvent = () => {
             />
           </fieldset>
         </div>
-        <input type="submit" className="btn btn-primary" value="Update Event" />
+        <input type="submit" className="btn btn-all" value="Update Event" />
       </form>
       <div className="text-center">
         <h1 className="text-center text-3xl font-semibold my-4">
@@ -218,7 +218,7 @@ const UpdateMyEvent = () => {
         </h1>
         <button
           onClick={() => handleDeleteEvent(_id)}
-          className="btn btn-primary"
+          className="btn btn-dtls"
         >
           delete event
         </button>

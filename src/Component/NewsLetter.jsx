@@ -7,7 +7,7 @@ const NewsLetter = () => {
             <p className='mb-4 text-center font-light'>Keep up our latest news and event and subscribe our news letter</p>
             <div className='flex justify-center gap-3'>
                 <input type="text" className='border rounded-lg px-9' placeholder='your email . . .'/>
-                <button className='btn btn-primary'>Subscribe</button>
+                <button className='btn bg-red-400 hover:bg-red-700'>Subscribe</button>
             </div>
         </div>
     );

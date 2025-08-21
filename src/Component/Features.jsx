@@ -20,7 +20,7 @@ const Features = () => {
                 eventsPromise.map((event)=><EventCard event={event} key={event._id}></EventCard>)
             }
         </div>
-        <div className='flex justify-center items-center my-4'><Link to='/upComingEvents' className='btn btn-primary'>View All Events</Link></div>
+        <div className='flex justify-center items-center my-4'><Link to='/upComingEvents' className='btn btn-dtls'>View All Events</Link></div>
         </div>
     );
 };
