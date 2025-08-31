@@ -2,7 +2,9 @@
 
 A fully functional **React + Node.js** based social events web application where users can explore, create, join, and manage events. It features user authentication, date-based event sorting, live search, and a beautiful UI built with TailwindCSS and DaisyUI.
 
-🔗 **Live Site:** [Visit Now](https://graceful-longma-085a69.netlify.app/)
+🔗 **Live Site:** [Visit Now](https://social-event-management-ca42a.web.app/)
+[client-side repo](https://github.com/rupu10/social-event-management)
+[server-side repo](https://github.com/rupu10/social-event-management-server)
 
 ---
 
