@@ -13,17 +13,17 @@ const Galleries = () => {
             <p className='mb-6 md:text-4xl font-light'>some of our events photo</p>
             <div className='grid grid-cols-3 gap-4'>
             <div data-aos="zoom-in" className='col-span-2'>
-                <img className='h-[150px] md:h-[350px] w-full rounded-2xl' src={image2} alt="" />
+                <img className='h-[150px] md:h-[350px] w-full rounded-2xl object-cover' src={image2} alt="" />
             </div>
-            <img className='h-[150px] md:h-[350px] w-full rounded-2xl' src={image1} alt="" />
+            <img className='h-[150px] md:h-[350px] w-full rounded-2xl object-cover' src={image1} alt="" />
             <img className='h-[150px] md:h-[350px] w-[520px] rounded-2xl' src={image4} alt="" />
             <div data-aos="zoom-in" className='col-span-2'>
-                <img className='h-[150px] md:h-[350px] w-full rounded-2xl' src={image3} alt="" />
+                <img className='h-[150px] md:h-[350px] w-full rounded-2xl object-cover' src={image3} alt="" />
             </div>
             <div data-aos="zoom-in" className='col-span-2'>
-                <img className='h-[150px] md:h-[350px] w-full rounded-2xl' src={image6} alt="" />
+                <img className='h-[150px] md:h-[350px] w-full rounded-2xl object-cover' src={image6} alt="" />
             </div>
-            <img className='h-[150px] md:h-[350px] w-[520px] rounded-2xl' src={image5} alt="" />
+            <img className='h-[150px] md:h-[350px] w-[520px] rounded-2xl object-cover' src={image5} alt="" />
         </div>
         </div>
     );

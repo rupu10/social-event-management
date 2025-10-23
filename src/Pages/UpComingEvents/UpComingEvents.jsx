@@ -8,7 +8,6 @@ const UpComingEvents = () => {
 
   useEffect(() => {
     fetch(
-      // `https://social-management-server.vercel.app/events?title=${searchText}&sort=${sortMode}`
       `https://social-management-server.vercel.app/events?title=${searchText}&sort=${sortMode}`
     )
       .then((res) => res.json())

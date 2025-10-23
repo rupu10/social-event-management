@@ -2,7 +2,7 @@
 @plugin "daisyui";
 
 a.active{
-  @apply  bg-white text-black underline font-semibold rounded-3xl
+  @apply text-[#7c3aed] font-semibold rounded-3xl
 }
 
 .btn-all{
@@ -25,4 +25,11 @@ a.active{
 .btn-dtls:hover{
   background-color: #7c3aed;
   color: white;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .dark a.active {
+    @apply text-[#a78bfa] font-semibold rounded-3xl
+  }
 }

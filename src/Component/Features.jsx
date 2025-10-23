@@ -13,8 +13,10 @@ const Features = () => {
         },[])
     return (
         <div className='w-10/12 mx-auto my-8'>
-            <h1 className='text-3xl md:text-4xl font-semibold mb-1'>Our events</h1>
+            <div className='text-center'>
+                <h1 className='text-3xl md:text-4xl font-semibold mb-1'>Our events</h1>
             <p className='text-xl md:text-3xl font-light mb-4'>Here is some of our events</p>
+            </div>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
             {
                 eventsPromise.map((event)=><EventCard event={event} key={event._id}></EventCard>)
