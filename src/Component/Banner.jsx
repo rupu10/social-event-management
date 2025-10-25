@@ -8,6 +8,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Link } from "react-router";
 
 const Banner = () => {
   return (
@@ -40,12 +41,15 @@ const Banner = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-            <button className="btn btn-primary px-6 py-2 text-base font-semibold rounded-full">
-              Explore Events
-            </button>
-            <button className="btn btn-outline px-6 py-2 text-base font-semibold rounded-full">
-              Create Event
-            </button>
+            <Link to="/upComingEvents">
+            <button className="bg-gradient-to-r from-primary to-secondary text-primary-content rounded-lg py-3 px-6 font-semibold cursor-pointer">
+  Explore Events
+</button></Link>
+
+<Link to="/createEvents">
+<button className="py-3 border px-6 p rounded-lg cursor-pointer font-semibold hover:bg-gray-100 ">
+  Create Event
+</button></Link>
           </div>
         </div>
 
