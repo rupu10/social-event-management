@@ -14,6 +14,7 @@ import CreateEvent from "../Pages/CeateEvent/CreateEvent";
 import ManageMyEvents from "../Pages/ManageMyEvent/ManageMyEvents";
 import UpdateMyEvent from "../Pages/ManageMyEvent/UpdateMyEvent/UpdateMyEvent";
 import Error from "../Component/Error";
+import Reviews from "../Pages/Reviews/Reviews";
 
 const router = createBrowserRouter([
   {
@@ -30,9 +31,13 @@ const router = createBrowserRouter([
             Component: UpComingEvents
         },
         {
+            path:"/reviews",
+            Component: Reviews
+        },
+        {
             path: '/events/:id',
             element: <EventDetails></EventDetails>,
-            loader: ({params})=> fetch(`https://social-management-server.vercel.app/events/${params.id}`)
+            loader: ({params})=> fetch(`http://localhost:7000/events/${params.id}`)
         },
         {
             path: '/myJoinedEvents',
@@ -48,7 +53,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/updateMyEvent/:id',
-            loader: ({params}) => fetch(`https://social-management-server.vercel.app/events/${params.id}`),
+            loader: ({params}) => fetch(`http://localhost:7000/events/${params.id}`),
             element: <PrivateRoute><UpdateMyEvent></UpdateMyEvent></PrivateRoute>
         },
         {

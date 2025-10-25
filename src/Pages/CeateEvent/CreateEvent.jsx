@@ -25,11 +25,36 @@ const CreateEvent = () => {
       setImageFile(file);
       try {
         const result = await uploadImage(file);
-        if (result?.url) {
-          setUploadedUrl(result.url);
+        console.log("Upload result:", result);
+        
+        // Hook returns just the URL string, so use it directly
+        if (result) {
+          setUploadedUrl(result);
+          console.log("URL set successfully:", result);
+          Swal.fire({
+            icon: "success",
+            title: "Image Uploaded!",
+            text: "Your thumbnail has been uploaded successfully.",
+            timer: 2000,
+            showConfirmButton: false,
+          });
+        } else {
+          console.error("No URL returned from upload");
+          Swal.fire({
+            icon: "error",
+            title: "Upload Failed",
+            text: "Image uploaded but no URL returned. Please try again.",
+            timer: 3000,
+          });
         }
       } catch (error) {
         console.error("Image upload failed:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Upload Failed",
+          text: "Failed to upload image. Please try again.",
+          timer: 3000,
+        });
       }
     }
   };
@@ -92,7 +117,7 @@ const CreateEvent = () => {
 
     try {
       const res = await axios.post(
-        "https://social-management-server.vercel.app/events",
+        "http://localhost:7000/events",
         eventData
       );
 
@@ -148,8 +173,6 @@ const CreateEvent = () => {
       </span>
     </button>
   ));
-
-  
 
   return (
     <div className="min-h-screen py-8 px-4">

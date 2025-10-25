@@ -5,7 +5,7 @@ import ThemeTOggle from "./ThemeTOggle";
 
 import { AiOutlineHome, AiOutlinePlusCircle } from 'react-icons/ai';
 import { FaRegCalendarAlt, FaUserCheck, FaSignOutAlt } from 'react-icons/fa';
-import { MdMenuBook } from 'react-icons/md';
+import { MdMenuBook, MdOutlineReviews } from 'react-icons/md';
 import { FiSettings } from 'react-icons/fi';
 import logo from '/pngwing.com.png'
 
@@ -58,6 +58,7 @@ const Navbar = () => {
   const navLinks = [
     { to: "/", icon: AiOutlineHome, label: "Home" },
     { to: "/upComingEvents", icon: FaRegCalendarAlt, label: "Upcoming Events" },
+    { to: "/reviews", icon: MdOutlineReviews, label: "Reviews"}
   ];
 
   const eventLinks = [
@@ -131,7 +132,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden lg:flex items-center xl:gap-1">
           {navLinks.map((link) => (
             <NavLinkItem key={link.to} {...link} />
           ))}
