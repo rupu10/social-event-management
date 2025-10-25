@@ -336,7 +336,7 @@ console.log(user);
       {/* Share Modal */}
       {showShareModal && (
         <div className="fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-base-100 rounded-2xl shadow-2xl w-full p-6 border border-base-300 transform transition-all duration-300 scale-100 hover:scale-105">
+          <div className="bg-base-100 rounded-2xl shadow-2xl max-w-3xl p-6 border border-base-300 transform transition-all duration-300 scale-100 hover:scale-105">
             <h3 className="text-2xl font-bold text-base-content mb-4">Share This Event</h3>
             <p className="text-base-content/70 mb-6">Share this event with your friends and community</p>
             
