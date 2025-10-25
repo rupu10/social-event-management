@@ -69,7 +69,7 @@ console.log(user);
           setLoading(true);
           const token = await user.getIdToken();
           const response = await axios.get(
-            `http://localhost:7000/check-join-status?eventId=${_id}&email=${user.email}`,
+            `https://social-management-server.vercel.app/check-join-status?eventId=${_id}&email=${user.email}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`
@@ -82,7 +82,7 @@ console.log(user);
           // If the API fails, we can also check from the joinEvents endpoint as fallback
           try {
             const joinResponse = await axios.get(
-              `http://localhost:7000/joinEvents?email=${user.email}`,
+              `https://social-management-server.vercel.app/joinEvents?email=${user.email}`,
               {
                 headers: {
                   Authorization: `Bearer ${await user.getIdToken()}`
@@ -128,7 +128,7 @@ console.log(user);
     };
 
     try {
-      const response = await axios.post("http://localhost:7000/joinEvents", joinEvent);
+      const response = await axios.post("https://social-management-server.vercel.app/joinEvents", joinEvent);
       
       if (response.data.insertedId) {
         Swal.fire({
@@ -204,7 +204,7 @@ console.log(user);
     };
 
     axios
-      .post("http://localhost:7000/reviews", reviewToSubmit)
+      .post("https://social-management-server.vercel.app/reviews", reviewToSubmit)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
@@ -283,7 +283,7 @@ console.log(user);
       {/* Review Modal */}
       {showReviewModal && (
         <div className="fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-base-100 rounded-2xl shadow-2xl w-full p-6 border border-base-300 transform transition-all duration-300 scale-100 hover:scale-105">
+          <div className="bg-base-100 rounded-2xl shadow-2xl max-w-2xl p-6 border border-base-300 transform transition-all duration-300 scale-100 hover:scale-105">
             <h3 className="text-2xl font-bold text-base-content mb-2">Write a Review</h3>
             <p className="text-base-content/70 mb-6">Share your experience with "{title}"</p>
             

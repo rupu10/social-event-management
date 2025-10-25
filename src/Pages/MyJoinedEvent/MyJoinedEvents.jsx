@@ -9,7 +9,7 @@ const MyJoinedEvents = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`http://localhost:7000/joinEvents?email=${user.email}`, {
+        fetch(`https://social-management-server.vercel.app/joinEvents?email=${user.email}`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",

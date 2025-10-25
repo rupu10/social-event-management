@@ -71,7 +71,7 @@ const UpdateMyEvent = () => {
     const updatedEvent = data;
 
     axios
-      .put(`http://localhost:7000/events/${_id}`, updatedEvent)
+      .put(`https://social-management-server.vercel.app/events/${_id}`, updatedEvent)
       .then((res) => {
         console.log(res.data);
         if (!res.data.modifiedCount) {
@@ -116,7 +116,7 @@ const UpdateMyEvent = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:7000/events/${id}`)
+          .delete(`https://social-management-server.vercel.app/events/${id}`)
           .then((res) => {
             if (res.data.deletedCount) {
               Swal.fire({

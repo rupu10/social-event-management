@@ -117,7 +117,7 @@ const CreateEvent = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:7000/events",
+        "https://social-management-server.vercel.app/events",
         eventData
       );
 

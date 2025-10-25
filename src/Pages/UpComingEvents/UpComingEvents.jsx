@@ -7,7 +7,7 @@ const UpComingEvents = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:7000/events?title=${searchText}&sort=upcoming`
+      `https://social-management-server.vercel.app/events?title=${searchText}&sort=upcoming`
     )
       .then((res) => res.json())
       .then((data) => {

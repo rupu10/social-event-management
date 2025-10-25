@@ -15,7 +15,7 @@ export default function ReviewsSection() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get('http://localhost:7000/reviews');
+        const response = await axios.get('https://social-management-server.vercel.app/reviews');
         setReviews(response.data);
         setLoading(false);
       } catch (error) {
