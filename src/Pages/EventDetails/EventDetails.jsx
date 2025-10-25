@@ -279,7 +279,7 @@ console.log(user);
   };
 
   return (
-    <div className="min-h-screen w-10/12 mx-auto bg-base-100 py-8">
+    <div className="min-h-screen md:w-10/12 mx-auto bg-base-100 py-8">
       {/* Review Modal */}
       {showReviewModal && (
         <div className="fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-50 p-4">

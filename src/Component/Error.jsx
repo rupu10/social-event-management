@@ -3,7 +3,7 @@ import image from '../assets/1aa207a3-c9f5-4694-ac58-481cb64e177a.jpg'
 import { Link } from 'react-router';
 const Error = () => {
     return (
-        <div className=' w-10/12 mx-auto mt-20'>
+        <div className='md:w-10/12 mx-auto mt-20'>
             <div className='flex justify-center items-center mb-8'>
             <img src={image} alt="" />
             </div>

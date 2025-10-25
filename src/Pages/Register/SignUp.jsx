@@ -14,6 +14,22 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [imageFile, setImageFile] = useState(null);
   const [uploadedUrl, setUploadedUrl] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: ""
+  });
+
+  // Check if form is complete
+  const isFormComplete = formData.name && formData.email && formData.password && uploadedUrl && !imgLoading;
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
@@ -94,6 +110,7 @@ const SignUp = () => {
           form.reset();
           setUploadedUrl("");
           setImageFile(null);
+          setFormData({ name: "", email: "", password: "" });
           navigate("/");
         });
       })
@@ -127,7 +144,7 @@ const SignUp = () => {
   return (
     <div>
       <div className="md:hero md:min-h-screen mt-20 md:mt-0">
-        <div className="hero-content flex-col md:flex-row-reverse lg:gap-12">
+        <div className="hero-content flex-col md:flex-row-reverse">
           <div className='hidden md:block'>
             <Lottie style={{width: '300px'}} animationData={registerLottie} loop={true}></Lottie>
           </div>
@@ -139,6 +156,8 @@ const SignUp = () => {
                 <input
                   type="text"
                   name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   className="input input-bordered w-full"
                   placeholder="Your name..."
                   required
@@ -148,6 +167,8 @@ const SignUp = () => {
                 <input
                   type="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   className="input input-bordered w-full"
                   placeholder="Your email"
                   required
@@ -236,6 +257,8 @@ const SignUp = () => {
                 <div className="relative">
                   <input
                     type={showPassword ? "text" : "password"}
+                    value={formData.password}
+                    onChange={handleInputChange}
                     className="input input-bordered w-full pr-10"
                     placeholder="Password"
                     name="password"
@@ -268,14 +291,13 @@ const SignUp = () => {
                   </p>
                 </div>
 
-                {/* Styled Sign Up Button */}
+                {/* Styled Sign Up Button - Never disabled, just changes appearance */}
                 <button
                   type="submit"
-                  disabled={!uploadedUrl || imgLoading}
-                  className={`px-8 py-3 text-white font-medium rounded-lg focus:ring-4 focus:ring-purple-200 focus:outline-none transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl mt-4 w-full flex items-center justify-center space-x-2 ${
-                    !uploadedUrl || imgLoading
-                      ? 'bg-gray-400 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700'
+                  className={`px-8 py-3 text-white font-medium rounded-lg focus:ring-4 focus:ring-purple-200 focus:outline-none transition-all duration-200 w-full flex items-center justify-center space-x-2 mt-4 ${
+                    isFormComplete
+                      ? 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transform hover:scale-105 shadow-lg hover:shadow-xl'
+                      : 'bg-gradient-to-r from-gray-400 to-gray-500 shadow-md cursor-not-allowed'
                   }`}
                 >
                   {imgLoading ? (

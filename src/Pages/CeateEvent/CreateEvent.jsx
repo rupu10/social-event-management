@@ -176,7 +176,7 @@ const CreateEvent = () => {
 
   return (
     <div className="min-h-screen py-8 px-4">
-      <div className="w-10/12 mx-auto">
+      <div className="md:w-10/12 mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold -900 mb-3">Create New Event</h1>
@@ -190,7 +190,7 @@ const CreateEvent = () => {
 
         {/* Form Section */}
         <div className=" rounded-2xl shadow-xl overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4">
+          <div className="bg-gradient-to-r from-primary to-secondary px-6 py-4">
             <h2 className="text-xl font-semibold text-white">Event Information</h2>
           </div>
           
@@ -403,7 +403,7 @@ const CreateEvent = () => {
               <button
                 type="submit"
                 disabled={isSubmitting || imgLoading || !selectedDate || !uploadedUrl}
-                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-200 focus:outline-none transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-200 focus:outline-none transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
               >
                 {isSubmitting ? (
                   <>
