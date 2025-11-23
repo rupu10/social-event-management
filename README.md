@@ -1,3 +1,4 @@
+#LalSabuj
 # Social Events Platform 🎉
 
 A fully functional **React + Node.js** based social events web application where users can explore, create, join, and manage events. It features user authentication, date-based event sorting, live search, and a beautiful UI built with TailwindCSS and DaisyUI.
